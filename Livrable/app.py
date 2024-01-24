@@ -33,7 +33,9 @@ except Exception as e:
 
 cursor = client['IPSSI']['projetMongo']
 
-df = pd.read_csv('./../Video_Games.csv', index_col='index')
+#open Videsogames.csv
+
+df = pd.read_csv('C:\\Users\\ACER NITRO\\Desktop\\MongoDB-Project\\Video_Games.csv', index_col='index')
 
 
 # warnings.filterwarnings('ignore')
@@ -94,12 +96,16 @@ def main():
     if graphique == 'graphique1':
         total_sales_by_genre = df.groupby('Genre')['Global_Sales'].sum().sort_values(ascending=False)
 
-        plt.figure(figsize=(12, 6))
-        sns.barplot(x=total_sales_by_genre.values, y=total_sales_by_genre.index, palette='viridis')
+        fig, ax = plt.subplots(figsize=(12, 6))
+        sns.barplot(x=total_sales_by_genre.values, y=total_sales_by_genre.index, palette='viridis', ax=ax)
         plt.title("Total Sales by Genre")
         plt.xlabel("Total Sales (in millions)")
         plt.ylabel("Genre")
-        plt.show()
+        # Instead of plt.show(), use st.pyplot()
+        st.pyplot(fig)
+        # Add your description
+        st.markdown("<div class='description'>Text1 here</div>", unsafe_allow_html=True)
+
         st.markdown("<div class='description'>Text1 here</div>", unsafe_allow_html=True)
     elif graphique == 'graphique2':
         st.write('On affiche le graphique 2')

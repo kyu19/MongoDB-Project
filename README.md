@@ -23,6 +23,8 @@ Clonez le dépôt sur votre machine locale.
 git clone https://github.com/kyu19/MongoDB-Project.git
  
 Exécutez l'application web Streamlit.
+
+mettez streamlit en mode DARK
  
 streamlit run app.py
  
@@ -40,5 +42,5 @@ Aperçu Annuel : Comprenez les tendances globales des ventes de jeux vidéo d'an
 Conclusion
  
 Cette application web Streamlit offre une interface interactive et conviviale pour explorer et obtenir des informations à partir du jeu de données mondial sur les ventes de jeux vidéo. Les utilisateurs peuvent naviguer facilement à travers différentes visualisations pour comprendre la dynamique de l'industrie du jeu.
- 
-N'hésitez pas à contribuer, à fournir des retours d'expérience ou à personnaliser le projet selon vos besoins!
+
+Avec les graphes plotly présents sur le dashborad nous pouvons en déduire qu'il est préférable de développer un jeu qui se vendra bien en Europe et amérique  car ce sont les plus grands consommateurs de jeux vidéo et il faudra développer un jeu du type divertissement (action /sport) et surtout que le jeu soit disponible sur console car la grande majorité des grands jeux se sont plus vendus sur console.

@@ -34,10 +34,15 @@ except Exception as e:
 
 cursor = client['IPSSI']['projetMongo']
 
-#open Videsogames.csv
-
-df = pd.read_csv('C:\\Users\\33619\\Desktop\\IPSSI_COURS\\NoSQL\\PROJET_Mongo\\MongoDB-Project\\Video_Games.csv', index_col='index')
-
+# Fonction pour obtenir un DataFrame à partir du curseur MongoDB
+def get_dataframe_from_mongo(cursor):
+ 
+    data = list(cursor.find({}, {'_id': 0}))
+    df = pd.DataFrame(data)
+    return df
+ 
+ 
+df = get_dataframe_from_mongo(cursor)
 
 # warnings.filterwarnings('ignore')
 
